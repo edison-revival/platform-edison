@@ -37,6 +37,8 @@ jobs:
           here=$(pwd -W 2>/dev/null || pwd) # a Windows path on Windows
           for example in examples/*/; do
             echo "::group::$example"
-            pio run -d "$example" -O "platform=symlink://$here"
+            # This checkout, not the published platform the example names.
+            sed -i.bak "s|^platform = .*|platform = symlink://$here|" "$example/platformio.ini"
+            pio run -d "$example"
             echo "::endgroup::"
           done
