@@ -1,0 +1,19 @@
+{
+  "build": {
+    "board": "EDISON",
+    "core": "edison",
+    "variant": "edison",
+    "mcu": "atom-z34xx",
+    "f_cpu": "500000000L"
+  },
+  "frameworks": ["arduino"],
+  "name": "Intel Edison (Kit for Arduino)",
+  "upload": {
+    "maximum_ram_size": 1073741824,
+    "maximum_size": 4194304000,
+    "protocol": "ssh",
+    "protocols": ["ssh"]
+  },
+  "url": "https://github.com/edison-revival/edison-image",
+  "vendor": "Intel"
+}

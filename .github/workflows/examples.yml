@@ -1,0 +1,42 @@
+name: examples
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PLATFORMIO_VERSION: 6.2.0
+
+jobs:
+  # Build the examples with this checkout of the platform on each kind of computer, with
+  # the packages it names (arduino-core-edison's release archives).
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2025, macos-15, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: astral-sh/setup-uv@v10.3.0 # immutable release
+
+      - name: Install PlatformIO
+        run: uv tool install "platformio==$PLATFORMIO_VERSION"
+
+      - name: Build the examples
+        run: |
+          here=$(pwd -W 2>/dev/null || pwd) # a Windows path on Windows
+          for example in examples/*/; do
+            echo "::group::$example"
+            pio run -d "$example" -O "platform=symlink://$here"
+            echo "::endgroup::"
+          done
