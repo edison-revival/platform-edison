@@ -17,10 +17,15 @@ Hosts: Windows x64, macOS (Apple silicon and Intel), Linux x64 and arm64.
 
 ```ini
 [env:edison]
-platform = https://github.com/edison-revival/platform-edison.git
+platform = https://github.com/edison-revival/platform-edison/archive/refs/tags/v0.1.0.zip
 board = edison
 framework = arduino
 ```
+
+This installs a release (see [Releases](https://github.com/edison-revival/platform-edison/releases)
+for the latest) without needing git. With git installed,
+`https://github.com/edison-revival/platform-edison.git#v0.1.0` works too, and without the
+`#v0.1.0` follows the development version.
 
 See [examples/](examples) for Blink, Serial and elapsedMillis projects.
 
@@ -73,6 +78,13 @@ platform_packages =
     toolchain-zig@file:///path/to/edison-zig-0.17.0-linux-amd64.tar.xz
     tool-edison@file:///path/to/edison-tools-0.1.0-linux-amd64.tar.xz
 ```
+
+## Releasing
+
+Update `CORE_VERSION` in [platform.py](platform.py) when the core has a new release, and
+`version` in [platform.json](platform.json). Then point the `platform =` lines above and in
+the examples at the new tag, push, and once CI passes, tag `vX.Y.Z` and create a GitHub
+release for it.
 
 ## License
 
