@@ -56,8 +56,10 @@ upload stops with a host key error; see the
 
 ### Serial monitor
 
-`Serial` is the board's USB serial port on J16: `pio device monitor`. If the computer has
-other serial ports, set `monitor_port` (on Linux, `/dev/serial/by-id/usb-edison-revival_*`
+`Serial` is the board's USB serial port on J16: `pio device monitor` finds it by its USB
+ID (`1d6b:0104`), even with other serial ports connected. That ID is Linux's generic one
+for USB gadgets, so if another Linux gadget device (a Raspberry Pi in gadget mode, say) is
+connected too, set `monitor_port` (on Linux, `/dev/serial/by-id/usb-edison-revival_*`
 picks the Edison).
 
 ## How the packages are pinned

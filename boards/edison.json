@@ -2,6 +2,7 @@
   "build": {
     "board": "EDISON",
     "core": "edison",
+    "hwids": [["0x1D6B", "0x0104"]],
     "variant": "edison",
     "mcu": "atom-z34xx",
     "f_cpu": "500000000L"
