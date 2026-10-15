@@ -1,6 +1,6 @@
 {
   "name": "edison",
-  "title": "Intel Edison (edison-revival)",
+  "title": "Intel Edison",
   "description": "The Intel Edison (Kit for Arduino) running edison-revival's edison-image (Debian 13). Sketches are compiled on your computer by Zig and uploaded over SSH, by USB or the network.",
   "homepage": "https://github.com/edison-revival/platform-edison",
   "license": "MIT",
