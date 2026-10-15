@@ -68,23 +68,10 @@ this computer's archives from it: `framework-arduino-edison` (the core),
 release's `SHA256SUMS` lists their checksums; PlatformIO doesn't check them itself for
 packages installed by URL.
 
-To build against local archives (from the core's `tools/package.sh`), override them in
-`platformio.ini`:
+## Contributing
 
-```ini
-platform_packages =
-    framework-arduino-edison@file:///path/to/edison-core-0.1.0.tar.xz
-    tool-edison-sysroot@file:///path/to/edison-sysroot-0.1.0.tar.xz
-    toolchain-zig@file:///path/to/edison-zig-0.17.0-linux-amd64.tar.xz
-    tool-edison@file:///path/to/edison-tools-0.1.0-linux-amd64.tar.xz
-```
-
-## Releasing
-
-Update `CORE_VERSION` in [platform.py](platform.py) when the core has a new release, and
-`version` in [platform.json](platform.json). Then point the `platform =` lines above and in
-the examples at the new tag, push, and once CI passes, tag `vX.Y.Z` and create a GitHub
-release for it.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for building against local packages, CI, releasing
+and conventions.
 
 ## License
 
