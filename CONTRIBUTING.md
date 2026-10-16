@@ -61,4 +61,4 @@ core release named in `platform.py`.
   request a month with updates.
 - **Hardware changes need a hardware test.** Note what you tested on a real board in the
   pull request; findings go in
-  [edison-docs](https://github.com/edison-revival/edison-docs).
+  [edison-docs](https://github.com/open-edison/edison-docs).

@@ -15,6 +15,6 @@
     "protocol": "ssh",
     "protocols": ["ssh"]
   },
-  "url": "https://github.com/edison-revival/edison-image",
+  "url": "https://github.com/open-edison/edison-image",
   "vendor": "Intel"
 }

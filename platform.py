@@ -7,10 +7,10 @@ from platformio.exception import UserSideException
 from platformio.public import PlatformBase
 
 # The arduino-core-edison release this platform uses, and the Zig version it ships.
-CORE_VERSION = "0.1.0"
+CORE_VERSION = "0.1.1"
 ZIG_VERSION = "0.17.0"
 RELEASE_URL = (
-    "https://github.com/edison-revival/arduino-core-edison/releases/download/v" + CORE_VERSION
+    "https://github.com/open-edison/arduino-core-edison/releases/download/v" + CORE_VERSION
 )
 
 # PlatformIO's system type -> the release's name for that host.

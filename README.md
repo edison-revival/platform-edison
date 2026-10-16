@@ -1,10 +1,10 @@
 # platform-edison
 
 A [PlatformIO](https://platformio.org) platform for the Intel Edison (Kit for Arduino)
-running [edison-image](https://github.com/edison-revival/edison-image). Part of
-[edison-revival](https://github.com/edison-revival).
+running [edison-image](https://github.com/open-edison/edison-image). Part of
+[open-edison](https://github.com/open-edison).
 
-It builds with [arduino-core-edison](https://github.com/edison-revival/arduino-core-edison),
+It builds with [arduino-core-edison](https://github.com/open-edison/arduino-core-edison),
 the same core, compiler (Zig) and uploader as the Arduino IDE uses, installed from that
 core's release archives. Sketches are compiled on your computer into a Linux program and
 uploaded over SSH; edison-image runs it as the `edison-sketch` service.
@@ -17,15 +17,15 @@ Hosts: Windows x64, macOS (Apple silicon and Intel), Linux x64 and arm64.
 
 ```ini
 [env:edison]
-platform = https://github.com/edison-revival/platform-edison/archive/refs/tags/v0.1.0.zip
+platform = https://github.com/open-edison/platform-edison/archive/refs/tags/v0.1.1.zip
 board = edison
 framework = arduino
 ```
 
-This installs a release (see [Releases](https://github.com/edison-revival/platform-edison/releases)
+This installs a release (see [Releases](https://github.com/open-edison/platform-edison/releases)
 for the latest) without needing git. With git installed,
-`https://github.com/edison-revival/platform-edison.git#v0.1.0` works too, and without the
-`#v0.1.0` follows the development version.
+`https://github.com/open-edison/platform-edison.git#v0.1.1` works too, and without the
+`#v0.1.1` follows the development version.
 
 See [examples/](examples) for Blink, Serial and elapsedMillis projects.
 
@@ -52,14 +52,14 @@ $env:PLATFORMIO_UPLOAD_FLAGS = "-password=YOUR_PASSWORD"; pio run -t upload   # 
 The key is shared with the Arduino IDE, so a computer that has uploaded from the IDE
 doesn't need this. If the board at an address changes (a reflash, or another board), the
 upload stops with a host key error; see the
-[arduino-core-edison README](https://github.com/edison-revival/arduino-core-edison#uploading).
+[arduino-core-edison README](https://github.com/open-edison/arduino-core-edison#uploading).
 
 ### Serial monitor
 
 `Serial` is the board's USB serial port on J16: `pio device monitor` finds it by its USB
 ID (`1d6b:0104`), even with other serial ports connected. That ID is Linux's generic one
 for USB gadgets, so if another Linux gadget device (a Raspberry Pi in gadget mode, say) is
-connected too, set `monitor_port` (on Linux, `/dev/serial/by-id/usb-edison-revival_*`
+connected too, set `monitor_port` (on Linux, `/dev/serial/by-id/usb-open-edison_*`
 picks the Edison).
 
 ## How the packages are pinned

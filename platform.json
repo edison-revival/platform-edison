@@ -1,8 +1,8 @@
 {
   "name": "edison",
   "title": "Intel Edison",
-  "description": "The Intel Edison (Kit for Arduino) running edison-revival's edison-image (Debian 13). Sketches are compiled on your computer by Zig and uploaded over SSH, by USB or the network.",
-  "homepage": "https://github.com/edison-revival/platform-edison",
+  "description": "The Intel Edison (Kit for Arduino) running open-edison's edison-image (Debian 13). Sketches are compiled on your computer by Zig and uploaded over SSH, by USB or the network.",
+  "homepage": "https://github.com/open-edison/platform-edison",
   "license": "MIT",
   "keywords": ["dev-platform", "intel", "edison", "x86_64", "linux"],
   "engines": {
@@ -10,9 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/edison-revival/platform-edison.git"
+    "url": "https://github.com/open-edison/platform-edison.git"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "frameworks": {
     "arduino": {
       "package": "framework-arduino-edison",
