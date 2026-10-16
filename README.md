@@ -17,15 +17,15 @@ Hosts: Windows x64, macOS (Apple silicon and Intel), Linux x64 and arm64.
 
 ```ini
 [env:edison]
-platform = https://github.com/open-edison/platform-edison/archive/refs/tags/v0.1.4.zip
+platform = https://github.com/open-edison/platform-edison/archive/refs/tags/v0.1.5.zip
 board = edison
 framework = arduino
 ```
 
 This installs a release (see [Releases](https://github.com/open-edison/platform-edison/releases)
 for the latest) without needing git. With git installed,
-`https://github.com/open-edison/platform-edison.git#v0.1.4` works too, and without the
-`#v0.1.4` follows the development version.
+`https://github.com/open-edison/platform-edison.git#v0.1.5` works too, and without the
+`#v0.1.5` follows the development version.
 
 See [examples/](examples) for Blink, Serial, elapsedMillis and I2C bus scan (`Wire`) projects.
 
