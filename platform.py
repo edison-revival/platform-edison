@@ -7,7 +7,7 @@ from platformio.exception import UserSideException
 from platformio.public import PlatformBase
 
 # The arduino-core-edison release this platform uses, and the Zig version it ships.
-CORE_VERSION = "0.1.2"
+CORE_VERSION = "0.1.3"
 ZIG_VERSION = "0.17.0"
 # The core release that first shipped this Zig version. Later releases carry their own copy,
 # but the Boards Manager index keeps pointing here; so does this, so a core update doesn't
