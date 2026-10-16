@@ -9,9 +9,13 @@ from platformio.public import PlatformBase
 # The arduino-core-edison release this platform uses, and the Zig version it ships.
 CORE_VERSION = "0.1.2"
 ZIG_VERSION = "0.17.0"
-RELEASE_URL = (
-    "https://github.com/open-edison/arduino-core-edison/releases/download/v" + CORE_VERSION
-)
+# The core release that first shipped this Zig version. Later releases carry their own copy,
+# but the Boards Manager index keeps pointing here; so does this, so a core update doesn't
+# download the same Zig again (PlatformIO treats a new URL as a new package).
+ZIG_RELEASE = "0.1.1"
+
+RELEASES = "https://github.com/open-edison/arduino-core-edison/releases/download/v"
+RELEASE_URL = RELEASES + CORE_VERSION
 
 # PlatformIO's system type -> the release's name for that host.
 HOSTS = {
@@ -37,7 +41,7 @@ class EdisonPlatform(PlatformBase):
         if host is None:
             return  # configure_default_packages says so
         packages["toolchain-zig"]["version"] = "%s/edison-zig-%s-%s.tar.xz" % (
-            RELEASE_URL,
+            RELEASES + ZIG_RELEASE,
             ZIG_VERSION,
             host,
         )

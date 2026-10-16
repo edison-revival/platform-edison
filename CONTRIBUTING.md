@@ -41,7 +41,9 @@ core release named in `platform.py`.
 
 ## Releasing
 
-1. When the core has a new release, set `CORE_VERSION` in `platform.py` to it.
+1. When the core has a new release, set `CORE_VERSION` in `platform.py` to it. If that
+   release ships a new Zig version, also set `ZIG_VERSION`, and `ZIG_RELEASE` to that
+   release; otherwise leave `ZIG_RELEASE` alone, so updating doesn't download Zig again.
 2. Set `version` in `platform.json`, and point the `platform =` lines in the README and the
    examples at the new tag's archive URL.
 3. Push, and once CI is green and an upload has been tested on a real board, tag and push:
